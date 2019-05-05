@@ -28,3 +28,18 @@ plt.xlabel("Tiempo")
 plt.ylabel("Senial")
 
 plt.savefig("PlotFourier1.pdf")
+
+
+#Haga la transformada de Fourier de ambas seniales usando su implementacion propia de la transformada discreta de fourier
+def fourier(M):
+    F=[]
+    n=len(M)
+    for i in range(n):
+        s=0
+        for k in range(n):
+            s+=M[k]*np.exp((-1j)*2*np.pi*k*((i*1.0)/n))
+        F.append(s)
+    return (F)
+###Transformadas
+sigSum_trans=fourier(sigSum)
+sig_trans=fourier(sig)
