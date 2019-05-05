@@ -15,11 +15,10 @@ t=sig[:,0]
 senial=sig[:,1]
 
 plt.figure()
-plt.subplot(2,1,1)
+plt.subplot(1,2,1)
 plt.plot(tSum,senialSum)
 
-plt.figure()
-plt.subplot(2,2,2)
+plt.subplot(1,2,2)
 plt.plot(t,senial)
 
 plt.savefig("PlotFourier1.pdf")
