@@ -14,11 +14,17 @@ senialSum=sigSum[:,1]
 t=sig[:,0]
 senial=sig[:,1]
 
-plt.figure()
+plt.figure(figsize=(20,10))
 plt.subplot(1,2,1)
-plt.plot(tSum,senialSum)
+plt.plot(tSum,senialSum,"r")
+plt.title("Seniales sumadas")
+plt.xlabel("Tiempo")
+plt.ylabel("Senial")
 
 plt.subplot(1,2,2)
-plt.plot(t,senial)
+plt.plot(t,senial,"b")
+plt.title("Seniales seguidas")
+plt.xlabel("Tiempo")
+plt.ylabel("Senial")
 
 plt.savefig("PlotFourier1.pdf")
