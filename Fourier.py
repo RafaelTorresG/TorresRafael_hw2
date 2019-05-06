@@ -79,3 +79,16 @@ plt.xlabel("tiempo")
 plt.ylabel("Senial del temblor")
 plt.legend()
 plt.savefig("PlotFourier3.pdf")
+
+#Haga la transformada de Fourier de la senial usando paquetes de scipy y grafiquela
+from scipy.fftpack import fft
+from scipy.fftpack import ifft
+TransTemblor=fft(temblor)
+freqTemblor=np.fft.fftfreq(len(temblor),0.01)
+
+plt.figure(figsize=(30,10))
+plt.plot(freqTemblor,TransTemblor,"g",label="Senial transformada")
+plt.xlabel("frecuencias")
+plt.ylabel("Senial del temblor")
+plt.legend()
+plt.savefig("PlotFourier4.pdf")
