@@ -71,3 +71,11 @@ plt.savefig("PlotTransFourier2.pdf")
 #Almacene los datos de temblor.txt. Estos datos son datos reales de una senial sismica
 temblor=np.genfromtxt("temblor.txt")
 tTemb=np.linspace(0,900.01,len(temblor))
+
+#Haga una grafica de la senial en funcion del tiempo.
+plt.figure(figsize=(30,10))
+plt.plot(tTemb,temblor,"r",label="Senial recibida")
+plt.xlabel("tiempo")
+plt.ylabel("Senial del temblor")
+plt.legend()
+plt.savefig("PlotFourier3.pdf")
