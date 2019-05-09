@@ -41,8 +41,8 @@ def fourier(M):
         F.append(s)
     return (F)
 ###Transformadas
-sigSum_trans=fourier(sigSum)
-sig_trans=fourier(sig)
+sigSum_trans=fourier(senialSum)
+sig_trans=fourier(senial)
 
 #Haga una grafica de las transformadas de Fourier de ambas seniales.
 #Esta grafica debe ser en funcion de las frecuencias (bono si no usa el paquete fftfreq.
@@ -54,7 +54,6 @@ plt.figure(figsize=(20,10))
 plt.subplot(1,2,1)
 plt.plot(freq,sigSum_trans,"r")
 plt.title("Transformada Seniales sumadas")
-plt.ylim(-1,10)
 plt.xlabel("Tiempo")
 plt.ylabel("Senial")
 
