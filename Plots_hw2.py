@@ -16,3 +16,13 @@ for n in range(100):
     U1max.append(u1)
     U2max.append(u2)
     U3max.append(u3)
+    
+plt.figure(figsize=(20,10))
+plt.title("Amplitud en función de las frecuencias")
+plt.plot(W,U1max,"r",label="primer piso")
+plt.plot(W,U2max,"g",label="segundo piso")
+plt.plot(W,U3max,"b",label="tercer piso")
+plt.xlabel("$\omega$")
+plt.ylabel("Amplitud")
+plt.legend()
+plt.savefig("U_vs_freq.pdf")
