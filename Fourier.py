@@ -69,10 +69,16 @@ plt.savefig("PlotTransFourier2.pdf")
 #Usando el paquete matplotlib.pyplot.specgram (ver: https://matplotlib.org/api/_as_gen/matplotlib.pyplot.specgram.html) haga un espectrograma de las dos seniales.
 plt.figure()
 plt.specgram(senialSum, NFFT=256, Fs=100)
+plt.title("Espectrograma senial sumada")
+plt.xlabel("t")
+plt.ylabel("Frecuencia")
 plt.savefig("specgram1.pdf")
 
 plt.figure()
 plt.specgram(senial, NFFT=256, Fs=100)
+plt.title("Espectrograma senial seguida")
+plt.xlabel("t")
+plt.ylabel("Frecuencia")
 plt.savefig("specgram2.pdf")
 
 #Almacene los datos de temblor.txt. Estos datos son datos reales de una senial sismica
@@ -103,4 +109,7 @@ plt.savefig("PlotFourier4.pdf")
 #haga un espectrograma de la senial
 plt.figure()
 plt.specgram(temblor, NFFT=256, Fs=100)
+plt.title("Espectrograma temblor")
+plt.xlabel("t")
+plt.ylabel("Frecuencia")
 plt.savefig("specgramTemblor.pdf")
