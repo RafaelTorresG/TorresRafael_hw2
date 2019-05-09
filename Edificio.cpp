@@ -36,7 +36,7 @@ void * LeapFrog(float u10, float v10, float u20, float v20, float u30, float v30
  U1[0]=0;
  U2[0]=0;
  U3[0]=0;
- std::cout<<0<<std::endl;
+ std::cout<<0<<","<<V1[0]<<","<<V2[0]<<","<<V3[0]<<","<<U1[0]<<","<<U2[0]<<","<<U3[0]<<std::endl;
  for(int t=1; t<N; t++)
  {
   float V1_old=V1[t-1];
@@ -50,6 +50,6 @@ void * LeapFrog(float u10, float v10, float u20, float v20, float u30, float v30
   U1[t]=U1[t-1]+h*V1[t];
   U2[t]=U2[t-1]+h*V2[t];
   U3[t]=U3[t-1]+h*V3[t];
-  std::cout<<t<<std::endl;
+  std::cout<<t<<","<<V1[t]<<","<<V2[t]<<","<<V3[t]<<","<<U1[t]<<","<<U2[t]<<","<<U3[t]<<std::endl;
  }
 }
