@@ -18,14 +18,14 @@ for n in range(100):
     U3max.append(u3)
     
 plt.figure(figsize=(20,10))
-plt.title("Amplitud en función de las frecuencias")
+plt.title("Amplitud en funcion de las frecuencias")
 plt.plot(W,U1max,"r",label="primer piso")
 plt.plot(W,U2max,"g",label="segundo piso")
 plt.plot(W,U3max,"b",label="tercer piso")
 plt.xlabel("$\omega$")
 plt.ylabel("Amplitud")
 plt.legend()
-plt.savefig("U_vs_freq.pdf")
+plt.savefig("UF.pdf")
 
 t=edificio[0:,][:,0][0:1000]/100
 AU_w9=edificio[0:,][10000:11000]
