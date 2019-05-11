@@ -33,7 +33,7 @@ for n in range(20):
         plt.plot(t,W10[1000*n:1000*(n+1)],"g")
     
     plt.subplot(5,2,2)
-    plt.title("Amplitud en primer piso para w=0.5")
+    plt.title("Amplitud en ultimo piso para w=0.5")
     plt.xlabel("t")
     plt.ylabel("Amplitud")
     if(n<10):
@@ -55,7 +55,7 @@ for n in range(20):
         plt.plot(t,W20[1000*n:1000*(n+1)],"g")
     
     plt.subplot(5,2,4)
-    plt.title("Amplitud en primer piso para w=1.0")
+    plt.title("Amplitud en ultimo piso para w=1.0")
     plt.xlabel("t")
     plt.ylabel("Amplitud")
     if(n<10):
@@ -77,7 +77,7 @@ for n in range(20):
         plt.plot(t,W30[1000*n:1000*(n+1)],"g")
     
     plt.subplot(5,2,6)
-    plt.title("Amplitud en primer piso para w=1.5")
+    plt.title("Amplitud en ultimo piso para w=1.5")
     plt.xlabel("t")
     plt.ylabel("Amplitud")
     if(n<10):
@@ -99,7 +99,7 @@ for n in range(20):
         plt.plot(t,W40[1000*n:1000*(n+1)],"g")
     
     plt.subplot(5,2,8)
-    plt.title("Amplitud en primer piso para w=2.0")
+    plt.title("Amplitud en ultimo piso para w=2.0")
     plt.xlabel("t")
     plt.ylabel("Amplitud")
     if(n<10):
@@ -120,7 +120,7 @@ for n in range(20):
         plt.plot(t,W50[1000*n:1000*(n+1)],"g")
     
     plt.subplot(5,2,10)
-    plt.title("Amplitud en primer piso para w=2.5")
+    plt.title("Amplitud en ultimo piso para w=2.5")
     plt.xlabel("t")
     plt.ylabel("Amplitud")
     if(n<10):
