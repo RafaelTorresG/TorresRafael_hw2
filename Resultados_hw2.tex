@@ -77,7 +77,7 @@ Puede verse que en efecto la frecuencia se dipara hacia poco antes de t=600, lo 
 \centering
 \includegraphics[scale=0.4]{UF.pdf}
 \end{figure}
-Puede verse que, en coherencia con un modelo de 3 resortes y 3 masas, se encuentran 3 frecuencias de resonancia, caracterizados por los tres picos que se exhiben para todos los pisos, en la misma frecuencia. 
+Puede verse que, en coherencia con un modelo de 3 resortes y 3 masas, se encuentran 3 frecuencias de resonancia, caracterizados por los tres picos de amplitud que se exhiben para todos los pisos, en la misma frecuencia. 
 
 \subsection{Frecuencias de interés}
 Se escogieron las frecuencias donde se exhibían los picos (las de resonancia), y un punto por encima de los 2 Hz donde las 3 frecuencias se hacen casi iguales.\\
@@ -111,5 +111,14 @@ Esta frecuencia pareció interesante porque los máximos de amplitud era muy sim
 \includegraphics[scale=0.4]{BONO.pdf}
 \caption{Rojo: edificios de entre 3 y 9 pisos; Azul: edificios de entre 10 y 16 pisos; Verde edificios de entre 17 y 22 pisos}
 \end{figure}
-Para el bono se decidió estudiar
+Para el bono se decidió estudiar el efecto de temblores de diferentes frecuencias sobre el primer y último piso de edificios con diferentes alturas (número de pisos). Se tomaron 20 tamaños de edificio, caracterizados por ser de entre 3 y 22 pisos.\\
+Para esto, se utilizó el método de Euler y se resuelve el sistema de ecuaciones diferenciales parciales en forma matricial, así: U[t+1]=\textbf{M}U[t]+F[t]\\
+Donde U es un vector columna cuya i-esima entrada es la amplitud del movimiento en cada piso i; M es la matriz de NxN (N pisos) de coeficientes de la parte homogénea del sistema de ecuaciones diferenciales, con -2k/m en la diagonal salvo en la entrada NxN, donde es -k/m, y en las entradas adyacentes a la diagonal tiene k/m, y ceros en el resto; y F es el vector de forzamiento, cada entrada es el forzamiento en el i-ésimo piso, es cero en todas las entradas menos la primera, donde se tiene el forzamiento oscilatorio del temblor. \\
+Se puede verificar con el código que poniendo N=3 y w=1.4142, se obtienen las mismas series que en el ejercicio anterior.
+\\
+Se imprime para los distintos tamaños de edificio la amplitud en funcion del tiempo para el último y primer piso, para 5 diferentes frecuencias. Se agrupan los edificios en tres grupos: 3 y 9 pisos; entre 10 y 16 pisos; entre 17 y 22 pisos. \\
+Cómo se puede ver en las gráficas, para las frecuencias estudiadas, w=0.5 y w=1 exhibe el comportamiento de frecuencia de resonancia para algunos de los edificios con pocos pisos, pues la amplitud es creciente tanto en el último como en el primer piso. En estos casos, se puede afirmar que el edificio colapsaría. También se puede apreciar que estas podrías ser la frecuencias de resonancia para edificios de entre 10 y 16 pisos, pues su amplitud es creciente también. Sin embargo, no aumenta tan rápido como en algunos de los edificios más bajos.\\
+Para las frecuencias de w=2 y w=2.5 se encuentra que el temblor se siente con más intensidad en el primer piso que en el último, pues sin importar el tamaño del edificio, la amplitud fue mayor siempre en el primer piso que en el útlimo.\\
+Al parecer, para w=2.5 se alcanza una feecuencia de resonancia para varios edificios bajos, y casi todos los de más de 10 pisos, pues casi todas las amplitudes son crecientes en t.\\
+Se tomaron casi todos los parámetros dados, así que estos análisis no son muy realistas, sin embargo, el código resuelve para cualquier frecuencia y cantidad de pisos el sistema de ecuaciones diferenciales, así que puede servir en un futuro con mejores parámetros.
 \end{document}
