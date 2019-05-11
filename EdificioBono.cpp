@@ -12,6 +12,7 @@ float D=w*0.028; //el espacio entre w a probar para graficar amplitudes maximas
 int main()
 {
  for(int omega=1; omega<=5; omega++) 
+ {
   for(int n=3; n<23; n++)
   {
    BONO(n,1000,0.1,omega*0.5); 
