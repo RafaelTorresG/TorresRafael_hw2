@@ -30,7 +30,7 @@ a.out : Edificio.cpp
 	g++ Edificio.cpp
 BONO.pdf : BONO.txt
 	python PlotsBONO_hw2.py 
-BONO.txt : EdificioBONO.cpp b.out
+BONO.txt : EdificioBono.cpp b.out
 	./b.out > BONO.txt
-b.out : EdificioBONO.cpp
-	g++ -o b.out EdificioBONO.cpp
+b.out : EdificioBono.cpp
+	g++ -o b.out EdificioBono.cpp
