@@ -2,7 +2,6 @@
 #include<math.h>
 
 void * LeapFrog(float, float, float, float, float, float, int, float, float);
-void * BONO(int, int, float, float);
 
 float m=1000.0;
 float k=2000.0;
@@ -60,74 +59,3 @@ void * LeapFrog(float u10, float v10, float u20, float v20, float u30, float v30
   std::cout<<t<<","<<V1[t]<<","<<V2[t]<<","<<V3[t]<<","<<U1[t]<<","<<U2[t]<<","<<U3[t]<<","<<W<<std::endl;
  }
 }
-
-void * BONO(int N, int T, float h, float W)
-{
- float M[N][N];
- //Llenar de ceros
- for(int n=0; n<N; n++)
- {
-  for(int m=0; m<N; m++)
-  {
-   M[n][m]=0;
-  }
- }
- //Llenar con ctes   
- for(int n=0; n<N-1; n++)
- {   
-  for(int m=0; m<N; m++)
-  {
-   if(n==m)
-   {
-    M[n][m+1]=a;
-    M[n][m-1]=a;
-   }
-  }
-   M[n][n]=-2*a;   
- }
- M[N-1][N-2]=a;
- M[N-1][N-1]=-a;
- 
- float V[T][N];
- float U[T][N];
- for(int t=0; t<T; t++)
- {
-  for(int n=0; n<N; n++)
-  {
-   V[t][n]=0;
-   U[t][n]=0;   
-  }
- }   
- float MU[N];
- for(int n=0; n>N; n++)
- {
-  MU[n]=0;
- }
- for(int t=1; t<T; t++)
- {
-  for(int n=0; n<N; n++)
-  {
-    MU[n]=0;
-    for(int m=0; m<N; m++)
-    {
-     MU[n]+=M[n][m]*U[t-1][m];   
-    }
-    V[t][n]=V[t-1][n]+h*MU[n];
-    if(n==1)
-    {
-     V[t][n]+=h*sin(W*t*h);   
-    }
-    U[t][n]=U[t-1][n]+h*V[t][n];
-   }
-  }
-  //Print
- for(int t=0; t<T; t++)
-  {
-   std::cout<<t<<","<<N<<","<<W<<",";
-   for(int n=0; n<N-1; n++)
-   {
-    std::cout<<U[t][n]<<",";   
-   }
-   std::cout<<U[t][N-1]<<std::endl;
-  }
- }
