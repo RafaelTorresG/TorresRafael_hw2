@@ -1,14 +1,17 @@
 import numpy as np
 import matplotlib.pylab as plt
-edificio=np.genfromtxt("edificio.txt",delimiter=",")
-data1=edificio[0:,][0:1000]
-W=[]
-U1max=[]
+edificio=np.genfromtxt("edificio.txt",delimiter=",") #importa datos
+data1=edificio[0:,][0:1000] #los primeros mil corresponden a la primera parte
+#para la segunda parte
+W=[]  #contendra las 100 frecuencias
+#contendra la amplitud maxima en valor absoluto de las amplitudes de cada piso para cada iteracion
+U1max=[] 
 U2max=[]
 U3max=[]
 for n in range(100):
-    rango=edificio[0:,][1000*(n+1):1000*(n+2)]
-    u1=max(abs(rango[:,4]))
+    rango=edificio[0:,][1000*(n+1):1000*(n+2)] #cada 1000 es el experimento para cada frecuencia
+    #se extraen las amplitudes maximas para cada omega en cada piso
+    u1=max(abs(rango[:,4])) 
     u2=max(abs(rango[:,5]))
     u3=max(abs(rango[:,6]))
     w=rango[:,7][0]
@@ -16,7 +19,7 @@ for n in range(100):
     U1max.append(u1)
     U2max.append(u2)
     U3max.append(u3)
-    
+#grafica parte 1    
 plt.figure(figsize=(20,10))
 plt.title("Amplitud en funcion de las frecuencias")
 plt.plot(W,U1max,"r",label="primer piso")
@@ -27,6 +30,7 @@ plt.ylabel("Amplitud")
 plt.legend()
 plt.savefig("UF.pdf")
 
+#graficas parte dos, se nombran w+la posicion en la que esta la frecuencia de interes en la lista
 t=edificio[0:,][:,0][0:1000]/100
 AU_w9=edificio[0:,][10000:11000]
 AU11=AU_w9[:,4]
