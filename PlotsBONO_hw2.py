@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pylab as plt
-BONO=np.genfromtxt("BONO.txt",delimiter=",")
+BONO=np.genfromtxt("BONO.txt",delimiter=",") #importa datos
 DATOS=BONO[0:,]
-t=DATOS[:,0][0:1000]
-
+t=DATOS[:,0][0:1000] #separa los tiempos
+#extrae en 5 listas correspondientes a una frecuencia especifica, 1000 amplitudes para 20 pisos
 W10=DATOS[0:20000][:,3]
 W1f=DATOS[0:20000][:,4]
 
@@ -18,7 +18,7 @@ W4f=DATOS[60000:80000][:,4]
 
 W50=DATOS[80000:100000][:,3]
 W5f=DATOS[80000:100000][:,4]
-
+#grafica. la leyenda molesta con 20 colores, se agrupan con un criterio arbitrario en edificios pequeños medianos y altos.
 plt.figure(figsize=(20,20))
 for n in range(20):
     plt.subplot(5,2,1)
