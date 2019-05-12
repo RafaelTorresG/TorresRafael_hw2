@@ -23,7 +23,7 @@ int main()
 
 void * BONO(int N, int T, float h, float W)
 {
- float M[N][N];
+ float M[N][N]; //matriz de coeficientes de la parte homogenea del sistema de eqs diffs.
  //Llenar de ceros
  for(int n=0; n<N; n++)
  {
@@ -48,17 +48,18 @@ void * BONO(int N, int T, float h, float W)
  M[N-1][N-2]=a;
  M[N-1][N-1]=-a;
  
- float V[T][N];
- float U[T][N];
+ float V[T][N]; //vector de velocidades por piso
+ float U[T][N]; //vector de desplazamientos por piso
+ //Metodo de Euler para N eqs.
  for(int t=0; t<T; t++)
  {
   for(int n=0; n<N; n++)
   {
-   V[t][n]=0;
+   V[t][n]=0; 
    U[t][n]=0;   
   }
  }   
- float MU[N];
+ float MU[N]; //Producto punto entre matriz de coeficientes y vector de desplazamientos
  for(int n=0; n>N; n++)
  {
   MU[n]=0;
