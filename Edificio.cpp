@@ -34,7 +34,7 @@ void * LeapFrog(float u10, float v10, float u20, float v20, float u30, float v30
  U1=new float [N];
  U2=new float [N];
  U3=new float [N];
-    
+ //Es casi indistinto a Euler dado que las velocidades en t medios atras es cero en todos los pisos 
  V1[0]=0;
  V2[0]=0;
  V3[0]=0;
